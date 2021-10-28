@@ -11,6 +11,7 @@ export interface IInputProps {
   value?: string
   placeholder?: string
   disabled?: boolean
+  required?: boolean
   onChange?: ChangeEventHandler<HTMLInputElement>
 }
 
@@ -22,6 +23,7 @@ const Input: FC<IInputProps> = ({
   value,
   placeholder,
   disabled,
+  required,
   onChange,
 }) => (
   <div className={styles.container}>
@@ -38,6 +40,7 @@ const Input: FC<IInputProps> = ({
       value={value}
       placeholder={placeholder}
       disabled={disabled}
+      required={required}
       onChange={onChange}
     />
   </div>

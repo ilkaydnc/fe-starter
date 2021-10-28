@@ -32,6 +32,7 @@ const LoginForm: FC = () => {
         label="Email"
         placeholder="Email"
         onChange={updateInputValues}
+        required
       />
       <Input
         name="password"
@@ -39,6 +40,7 @@ const LoginForm: FC = () => {
         label="Password"
         placeholder="Password"
         onChange={updateInputValues}
+        required
       />
       <Button type="submit" block>
         Login
