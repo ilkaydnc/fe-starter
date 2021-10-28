@@ -33,6 +33,7 @@ const Input: FC<IInputProps> = ({
     <input
       id={name}
       type={type}
+      name={name}
       className={cn(styles.base, className)}
       value={value}
       placeholder={placeholder}
