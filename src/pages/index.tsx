@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import { Button } from '@components/index'
+import { Button, Input } from '@/components'
 
-import styles from '@styles/Home.module.scss'
+import styles from '@/styles/Home.module.scss'
 
 const Home: NextPage = () => {
   return (
@@ -31,6 +31,9 @@ const Home: NextPage = () => {
           Example Button
         </Button>
         <br />
+        <div>
+          <Input name="test" label="Test" placeholder="Test Placeholder" />
+        </div>
       </main>
     </div>
   )
