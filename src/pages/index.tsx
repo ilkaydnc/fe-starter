@@ -3,6 +3,7 @@ import Head from 'next/head'
 
 import { Button, Input } from '@/components'
 
+import LoginForm from '@/modules/auth/components/login-form'
 import styles from '@/styles/Home.module.scss'
 
 const Home: NextPage = () => {
@@ -15,25 +16,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <Button size="sm">Example Button</Button>
-        <br />
-        <Button size="md">Example Button</Button>
-        <br />
-        <Button size="md" block>
-          Example Button
-        </Button>
-        <br />
-        <Button size="sm" theme="secondary">
-          Example Button
-        </Button>
-        <br />
-        <Button size="md" theme="secondary">
-          Example Button
-        </Button>
-        <br />
-        <div>
-          <Input name="test" label="Test" placeholder="Test Placeholder" />
-        </div>
+        <LoginForm />
       </main>
     </div>
   )
