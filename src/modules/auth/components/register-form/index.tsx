@@ -4,9 +4,9 @@ import cn from 'classnames'
 
 import { Button, Input } from '@/components'
 
-import styles from './login-form.module.scss'
+import styles from './register-form.module.scss'
 
-const LoginForm: FC = () => {
+const RegisterForm: FC = () => {
   const [values, setValues] = useState({})
 
   const updateInputValues = useCallback((e: ChangeEvent<HTMLInputElement>) => {
@@ -26,7 +26,7 @@ const LoginForm: FC = () => {
 
   return (
     <form onSubmit={onSubmit} className={cn(styles.container)}>
-      <h2 className={styles.title}>Login your account</h2>
+      <h2 className={styles.title}>Create new account</h2>
       <Input
         name="email"
         type="email"
@@ -43,14 +43,22 @@ const LoginForm: FC = () => {
         onChange={updateInputValues}
         required
       />
-      <Link href="/auth/register" passHref>
-        Don't have an account? Create an account!
+      <Input
+        name="confirm-password"
+        type="password"
+        label="Confirm Password"
+        placeholder="Confirm Password"
+        onChange={updateInputValues}
+        required
+      />
+      <Link href="/auth/login" passHref>
+        Have an account? Login your account!
       </Link>
       <Button type="submit" block>
-        Login
+        Register
       </Button>
     </form>
   )
 }
 
-export default LoginForm
+export default RegisterForm
