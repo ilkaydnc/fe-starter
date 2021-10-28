@@ -1,8 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import { Button, Input } from '@/components'
-
 import LoginForm from '@/modules/auth/components/login-form'
 import styles from '@/styles/Home.module.scss'
 
