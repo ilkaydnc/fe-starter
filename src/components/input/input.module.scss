@@ -25,6 +25,11 @@
     box-shadow: 0 0 0 2px hsl(258, 76%, 60%);
     background-color: hsl(0, 0%, 100%);
   }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.75;
+  }
 }
 
 .label {
