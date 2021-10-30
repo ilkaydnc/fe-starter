@@ -11,10 +11,12 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.2",
     "classnames": "^2.3.1",
     "next": "12.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-redux": "^7.2.6",
     "sass": "^1.43.4"
   },
   "devDependencies": {
@@ -25,6 +27,7 @@
     "@storybook/react": "^6.3.12",
     "@types/node": "16.11.6",
     "@types/react": "17.0.33",
+    "@typescript-eslint/parser": "^5.2.0",
     "babel-loader": "^8.2.3",
     "eslint": "7.32.0",
     "eslint-config-next": "12.0.1",

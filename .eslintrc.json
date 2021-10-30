@@ -2,6 +2,8 @@
   "extends": [
     "next",
     "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:import/recommended",
@@ -10,6 +12,8 @@
   ],
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+    "@typescript-eslint/no-unused-var": "off",
+    "import/named": "off"
   }
 }
