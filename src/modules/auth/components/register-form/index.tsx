@@ -5,9 +5,18 @@ import cn from 'classnames'
 import { Button, Input } from '@/components'
 
 import styles from './register-form.module.scss'
+import { RegisterActionPayload } from '../../redux/types'
+import { useAppDispatch, useAppSelector } from '@/app/hooks'
+import { register } from '../../redux/authSlice'
 
 const RegisterForm: FC = () => {
-  const [values, setValues] = useState({})
+  const dispatch = useAppDispatch()
+  const { loading, error } = useAppSelector(state => state.auth)
+  const [values, setValues] = useState<RegisterActionPayload>({
+    email: '',
+    password: '',
+    confirmPassword: '',
+  })
 
   const updateInputValues = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -19,7 +28,7 @@ const RegisterForm: FC = () => {
     (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault()
 
-      console.log(values)
+      dispatch(register(values))
     },
     [values]
   )
@@ -34,6 +43,7 @@ const RegisterForm: FC = () => {
         placeholder="Email"
         onChange={updateInputValues}
         required
+        disabled={loading}
       />
       <Input
         name="password"
@@ -42,20 +52,23 @@ const RegisterForm: FC = () => {
         placeholder="Password"
         onChange={updateInputValues}
         required
+        disabled={loading}
       />
       <Input
-        name="confirm-password"
+        name="confirmPassword"
         type="password"
         label="Confirm Password"
         placeholder="Confirm Password"
         onChange={updateInputValues}
         required
+        disabled={loading}
       />
+      {error && <div className={styles.error}>{error}</div>}
       <Link href="/auth/login" passHref>
         Have an account? Login your account!
       </Link>
-      <Button type="submit" block>
-        Register
+      <Button type="submit" block disabled={loading}>
+        {loading ? 'Sending...' : 'Register'}
       </Button>
     </form>
   )

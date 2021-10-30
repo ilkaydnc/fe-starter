@@ -5,9 +5,16 @@ import cn from 'classnames'
 import { Button, Input } from '@/components'
 
 import styles from './login-form.module.scss'
+import { login } from '../../redux/authSlice'
+import { LoginActionPayload } from '../../redux/types'
+import { useAppDispatch } from '@/app/hooks'
 
 const LoginForm: FC = () => {
-  const [values, setValues] = useState({})
+  const dispatch = useAppDispatch()
+  const [values, setValues] = useState<LoginActionPayload>({
+    email: '',
+    password: '',
+  })
 
   const updateInputValues = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -20,6 +27,8 @@ const LoginForm: FC = () => {
       e.preventDefault()
 
       console.log(values)
+
+      dispatch(login(values))
     },
     [values]
   )
