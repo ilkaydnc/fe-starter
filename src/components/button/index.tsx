@@ -9,6 +9,7 @@ export interface IButtonProps {
   size?: 'sm' | 'md'
   className?: string
   block?: boolean
+  disabled?: boolean
   onClick?: () => void
   children?: ReactNode
 }
@@ -19,6 +20,7 @@ const Button: FC<IButtonProps> = ({
   size = 'md',
   className,
   block,
+  disabled,
   onClick,
   children,
 }) => (
@@ -32,6 +34,7 @@ const Button: FC<IButtonProps> = ({
       block && styles.block,
       className
     )}
+    disabled={disabled}
   >
     {children}
   </button>

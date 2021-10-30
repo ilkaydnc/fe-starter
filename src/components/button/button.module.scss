@@ -6,6 +6,11 @@
   font-weight: 500;
   transition: 0.15s;
   cursor: pointer;
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.75;
+  }
 }
 
 .sm {
