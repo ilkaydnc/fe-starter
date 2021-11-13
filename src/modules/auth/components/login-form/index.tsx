@@ -7,10 +7,13 @@ import { Button, Input } from '@/components'
 import styles from './login-form.module.scss'
 import { login } from '../../redux/authSlice'
 import { LoginActionPayload } from '../../redux/types'
-import { useAppDispatch } from '@/app/hooks'
+import { useAppDispatch, useAppSelector } from '@/app/hooks'
+import { FormattedMessage, useIntl } from 'react-intl'
 
 const LoginForm: FC = () => {
+  const { formatMessage } = useIntl()
   const dispatch = useAppDispatch()
+  const { loading, error } = useAppSelector(state => state.auth)
   const [values, setValues] = useState<LoginActionPayload>({
     email: '',
     password: '',
@@ -35,28 +38,35 @@ const LoginForm: FC = () => {
 
   return (
     <form onSubmit={onSubmit} className={cn(styles.container)}>
-      <h2 className={styles.title}>Login your account</h2>
+      <h2 className={styles.title}>
+        <FormattedMessage id="login-your-account" />
+      </h2>
       <Input
         name="email"
         type="email"
-        label="Email"
-        placeholder="Email"
+        label={formatMessage({ id: 'email' })}
+        placeholder={formatMessage({ id: 'email' })}
         onChange={updateInputValues}
         required
+        disabled={loading}
       />
       <Input
         name="password"
         type="password"
-        label="Password"
-        placeholder="Password"
+        label={formatMessage({ id: 'password' })}
+        placeholder={formatMessage({ id: 'password' })}
         onChange={updateInputValues}
         required
+        disabled={loading}
       />
       <Link href="/auth/register" passHref>
-        Don't have an account? Create an account!
+        {formatMessage({ id: 'dont-have-an-account' })}
       </Link>
-      <Button type="submit" block>
-        Login
+      {error && <div className={styles.error}>{error}</div>}
+      <Button type="submit" block disabled={loading}>
+        {loading
+          ? formatMessage({ id: 'sending' })
+          : formatMessage({ id: 'login' })}
       </Button>
     </form>
   )

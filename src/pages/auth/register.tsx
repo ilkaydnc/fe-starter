@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import Register from '@/modules/auth/views/register'
+import { GetStaticProps } from 'next'
 
 const RegisterPage = () => {
   return (

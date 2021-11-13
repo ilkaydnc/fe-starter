@@ -8,8 +8,10 @@ import styles from './register-form.module.scss'
 import { RegisterActionPayload } from '../../redux/types'
 import { useAppDispatch, useAppSelector } from '@/app/hooks'
 import { register } from '../../redux/authSlice'
+import { FormattedMessage, useIntl } from 'react-intl'
 
 const RegisterForm: FC = () => {
+  const { formatMessage } = useIntl()
   const dispatch = useAppDispatch()
   const { loading, error } = useAppSelector(state => state.auth)
   const [values, setValues] = useState<RegisterActionPayload>({
@@ -35,12 +37,14 @@ const RegisterForm: FC = () => {
 
   return (
     <form onSubmit={onSubmit} className={cn(styles.container)}>
-      <h2 className={styles.title}>Create new account</h2>
+      <h2 className={styles.title}>
+        <FormattedMessage id="create-new-account" />
+      </h2>
       <Input
         name="email"
         type="email"
-        label="Email"
-        placeholder="Email"
+        label={formatMessage({ id: 'email' })}
+        placeholder={formatMessage({ id: 'email' })}
         onChange={updateInputValues}
         required
         disabled={loading}
@@ -48,8 +52,8 @@ const RegisterForm: FC = () => {
       <Input
         name="password"
         type="password"
-        label="Password"
-        placeholder="Password"
+        label={formatMessage({ id: 'password' })}
+        placeholder={formatMessage({ id: 'password' })}
         onChange={updateInputValues}
         required
         disabled={loading}
@@ -57,18 +61,20 @@ const RegisterForm: FC = () => {
       <Input
         name="confirmPassword"
         type="password"
-        label="Confirm Password"
-        placeholder="Confirm Password"
+        label={formatMessage({ id: 'confirm-password' })}
+        placeholder={formatMessage({ id: 'confirm-password' })}
         onChange={updateInputValues}
         required
         disabled={loading}
       />
       {error && <div className={styles.error}>{error}</div>}
       <Link href="/auth/login" passHref>
-        Have an account? Login your account!
+        {formatMessage({ id: 'have-an-account' })}
       </Link>
       <Button type="submit" block disabled={loading}>
-        {loading ? 'Sending...' : 'Register'}
+        {loading
+          ? formatMessage({ id: 'sending' })
+          : formatMessage({ id: 'register' })}
       </Button>
     </form>
   )
