@@ -19,7 +19,7 @@
   & > a {
     display: inline-block;
     align-self: flex-start;
-    color: hsl(258, 76%, 60%);
+    color: var(--c-primary);
     font-weight: 500;
 
     &:hover {
@@ -29,8 +29,10 @@
 }
 
 .title {
+  color: var(--text-color);
   text-align: center;
   font-size: 1.5rem;
+  transition: 0.15s;
 }
 
 .error {

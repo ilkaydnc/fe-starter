@@ -26,15 +26,15 @@
 }
 
 .primary {
-  background-color: hsl(258, 76%, 60%);
+  background-color: var(--button-bg);
   color: hsl(0, 0%, 100%);
 
   &:hover {
-    background-color: hsl(258, 76%, 65%);
+    background-color: var(--button-bg-hover);
   }
 
   &:active {
-    background-color: hsl(258, 76%, 55%);
+    background-color: var(--button-bg-active);
   }
 }
 

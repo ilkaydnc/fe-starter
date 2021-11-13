@@ -1,8 +1,10 @@
 .container {
   display: flex;
   padding: 0.5rem;
-  box-shadow: inset 0 0 0 1px hsl(0, 0%, 90%);
+  border: 1px solid var(--switch-border);
+  background-color: var(--switch-bg);
   border-radius: 0.25rem;
+  transition: 0.15s;
 
   @media screen and (max-width: 36rem) {
     width: 100%;
@@ -16,7 +18,7 @@
   width: 4rem;
   height: 2rem;
   border-radius: 0.25rem;
-  color: hsl(0, 0%, 30%);
+  color: var(--text-color);
   text-align: center;
   font-size: 1rem;
   line-height: 1rem;
@@ -28,11 +30,11 @@
   }
 
   &:hover {
-    background-color: hsl(0, 0%, 97%);
+    background-color: var(--switch-bg-hover);
   }
 
   &:active {
-    background-color: hsl(0, 0%, 95%);
+    background-color: var(--switch-bg-active);
   }
 
   @media screen and (max-width: 36rem) {
@@ -42,9 +44,9 @@
 
 .active {
   color: hsl(0, 0%, 97%);
-  background-color: hsl(258, 76%, 60%);
+  background-color: var(--c-primary);
 
   &:hover {
-    background-color: hsl(258, 76%, 55%);
+    background-color: var(--c-primary);
   }
 }

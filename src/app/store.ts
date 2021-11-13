@@ -1,10 +1,12 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 
+import appReducer from '@/app/redux/appSlice'
 import authReducer from '@/modules/auth/redux/authSlice'
 
 export function makeStore() {
   return configureStore({
     reducer: {
+      app: appReducer,
       auth: authReducer,
     },
   })

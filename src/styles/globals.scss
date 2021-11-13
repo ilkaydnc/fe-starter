@@ -1,9 +1,14 @@
+@import './theme.scss';
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: var(--body-bg);
+  color: var(--text-color);
+  transition: background-color 0.15s, color 0.15s;
 }
 
 a {

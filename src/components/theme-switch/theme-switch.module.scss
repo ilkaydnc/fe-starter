@@ -1,0 +1,32 @@
+.button {
+  outline: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  border: 1px solid var(--switch-border);
+  background-color: var(--switch-bg);
+  color: var(--text-color);
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.15s;
+
+  & + & {
+    margin-left: 0.5rem;
+  }
+
+  &:hover {
+    background-color: var(--switch-bg-hover);
+  }
+
+  &:active {
+    background-color: var(--switch-bg-active);
+  }
+}

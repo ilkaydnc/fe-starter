@@ -5,8 +5,9 @@
   outline: none;
   border: none;
   display: block;
-  box-shadow: 0 0 0 2px hsl(0, 0%, 95%);
-  background-color: hsl(0, 0%, 95%);
+  box-shadow: 0 0 0 2px var(--input-border);
+  background-color: var(--input-bg);
+  color: var(--input-color);
   width: 100%;
   height: 2.5rem;
   border-radius: 0.25rem;
@@ -17,18 +18,23 @@
   box-sizing: border-box;
 
   &:hover {
-    box-shadow: 0 0 0 2px hsl(0, 0%, 93%);
-    background-color: hsl(0, 0%, 97%);
+    box-shadow: 0 0 0 2px var(--input-border-hover);
+    background-color: var(--input-bg-hover);
   }
 
   &:focus {
-    box-shadow: 0 0 0 2px hsl(258, 76%, 60%);
-    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 0 0 2px var(--input-border-focus);
+    background-color: var(--input-bg-active);
   }
 
   &:disabled {
     pointer-events: none;
     opacity: 0.75;
+  }
+
+  &::placeholder {
+    color: var(--input-color);
+    opacity: 0.5;
   }
 }
 
@@ -38,5 +44,5 @@
   font-size: 0.875rem;
   line-height: 0.875rem;
   font-weight: 500;
-  color: hsl(0, 0%, 20%);
+  color: var(--input-label);
 }

@@ -1,0 +1,60 @@
+:root {
+  --c-primary: hsl(258, 90%, 66%);
+  --c-primary-lighter: hsl(258, 90%, 70%);
+  --c-primary-darker: hsl(262, 83%, 58%);
+
+  --c-gray50: hsl(210, 20%, 98%);
+  --c-gray100: hsl(220, 14%, 96%);
+  --c-gray200: hsl(220, 13%, 91%);
+  --c-gray300: hsl(216, 12%, 84%);
+  --c-gray400: hsl(218, 11%, 65%);
+  --c-gray500: hsl(220, 9%, 46%);
+  --c-gray600: hsl(215, 14%, 34%);
+  --c-gray700: hsl(217, 19%, 27%);
+  --c-gray800: hsl(215, 28%, 17%);
+  --c-gray900: hsl(221, 39%, 11%);
+
+  --body-bg: var(--c-gray50);
+  --text-color: var(--c-gray900);
+
+  --button-bg: var(--c-primary);
+  --button-bg-hover: var(--c-primary-darker);
+  --button-bg-active: var(--c-primary-lighter);
+
+  --input-label: var(--c-gray800);
+  --input-color: var(--c-gray900);
+  --input-bg: var(--c-gray200);
+  --input-bg-hover: var(--c-gray200);
+  --input-bg-active: var(--c-gray50);
+  --input-border: var(--c-gray200);
+  --input-border-hover: var(--c-gray300);
+  --input-border-focus: var(--c-primary);
+
+  --switch-bg: var(--c-gray50);
+  --switch-bg-hover: var(--c-gray100);
+  --switch-bg-active: var(--c-gray200);
+  --switch-border: var(--c-gray200);
+
+  --card-shadow: var(--c-gray300);
+}
+
+[data-theme='dark'] {
+  --body-bg: var(--c-gray900);
+  --text-color: var(--c-gray50);
+
+  --input-label: var(--c-gray200);
+  --input-color: var(--c-gray50);
+  --input-bg: var(--c-gray800);
+  --input-bg-hover: var(--c-gray800);
+  --input-bg-active: var(--c-gray900);
+  --input-border: var(--c-gray800);
+  --input-border-hover: var(--c-gray700);
+  --input-border-focus: var(--c-primary-lighter);
+
+  --switch-bg: var(--c-gray900);
+  --switch-bg-hover: var(--c-gray800);
+  --switch-bg-active: var(--c-gray700);
+  --switch-border: var(--c-gray700);
+
+  --card-shadow: var(--c-gray800);
+}
