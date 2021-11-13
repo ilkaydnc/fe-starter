@@ -1,14 +1,15 @@
 import { ChangeEvent, FC, FormEvent, useCallback, useState } from 'react'
+import { FormattedMessage, useIntl } from 'react-intl'
 import Link from 'next/link'
 import cn from 'classnames'
 
 import { Button, Input } from '@/components'
 
-import styles from './register-form.module.scss'
 import { RegisterActionPayload } from '../../redux/types'
-import { useAppDispatch, useAppSelector } from '@/app/hooks'
+import { useAppDispatch, useAppSelector } from '@/hooks/redux'
 import { register } from '../../redux/authSlice'
-import { FormattedMessage, useIntl } from 'react-intl'
+
+import styles from './register-form.module.scss'
 
 const RegisterForm: FC = () => {
   const { formatMessage } = useIntl()

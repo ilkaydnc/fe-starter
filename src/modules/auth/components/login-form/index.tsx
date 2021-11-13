@@ -1,14 +1,15 @@
 import { ChangeEvent, FC, FormEvent, useCallback, useState } from 'react'
+import { FormattedMessage, useIntl } from 'react-intl'
 import Link from 'next/link'
 import cn from 'classnames'
 
 import { Button, Input } from '@/components'
 
-import styles from './login-form.module.scss'
+import { useAppDispatch, useAppSelector } from '@/hooks/redux'
 import { login } from '../../redux/authSlice'
 import { LoginActionPayload } from '../../redux/types'
-import { useAppDispatch, useAppSelector } from '@/app/hooks'
-import { FormattedMessage, useIntl } from 'react-intl'
+
+import styles from './login-form.module.scss'
 
 const LoginForm: FC = () => {
   const { formatMessage } = useIntl()

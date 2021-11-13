@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import cs from 'classnames'
 
-import { useAppSelector } from '@/app/hooks'
+import { useAppSelector } from '@/hooks/redux'
 import { setTheme } from '@/app/redux/appSlice'
 import { THEMES } from '@/app/redux/types'
 
