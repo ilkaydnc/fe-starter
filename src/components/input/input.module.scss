@@ -35,6 +35,7 @@
   &::placeholder {
     color: var(--input-color);
     opacity: 0.5;
+    transition: 0.15s;
   }
 }
 
@@ -45,4 +46,5 @@
   line-height: 0.875rem;
   font-weight: 500;
   color: var(--input-label);
+  transition: 0.15s;
 }
