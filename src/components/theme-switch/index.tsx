@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux'
 import cs from 'classnames'
 
 import { useAppSelector } from '@/hooks/redux'
-import { setTheme } from '@/app/redux/appSlice'
-import { THEMES } from '@/app/redux/types'
+import { setTheme } from '@/app/store/slice'
+import { THEMES } from '@/app/store/types'
 
 import styles from './theme-switch.module.scss'
 

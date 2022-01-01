@@ -6,8 +6,7 @@ import cn from 'classnames'
 import { Button, Input } from '@/components'
 
 import { useAppDispatch, useAppSelector } from '@/hooks/redux'
-import { login } from '../../redux/authSlice'
-import { LoginActionPayload } from '../../redux/types'
+import { login } from '../../store'
 
 import styles from './login-form.module.scss'
 
@@ -15,7 +14,7 @@ const LoginForm: FC = () => {
   const { formatMessage } = useIntl()
   const dispatch = useAppDispatch()
   const { loading, error } = useAppSelector(state => state.auth)
-  const [values, setValues] = useState<LoginActionPayload>({
+  const [values, setValues] = useState({
     email: '',
     password: '',
   })

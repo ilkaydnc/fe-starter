@@ -5,9 +5,8 @@ import cn from 'classnames'
 
 import { Button, Input } from '@/components'
 
-import { RegisterActionPayload } from '../../redux/types'
 import { useAppDispatch, useAppSelector } from '@/hooks/redux'
-import { register } from '../../redux/authSlice'
+import { register } from '../../store'
 
 import styles from './register-form.module.scss'
 
@@ -15,7 +14,7 @@ const RegisterForm: FC = () => {
   const { formatMessage } = useIntl()
   const dispatch = useAppDispatch()
   const { loading, error } = useAppSelector(state => state.auth)
-  const [values, setValues] = useState<RegisterActionPayload>({
+  const [values, setValues] = useState({
     email: '',
     password: '',
     confirmPassword: '',
